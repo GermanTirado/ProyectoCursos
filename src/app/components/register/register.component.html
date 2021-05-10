@@ -1,0 +1,100 @@
+<div class="container">
+  <div class="row justify-content-center pt-5">
+    <div class="col-lg-6 col-md-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <div class="card-title">
+            <h3 class="">Sign Up</h3>
+            <p class="card-text small text-muted">Fill the fields to register</p>
+            <form #formRegister="ngForm"  (ngSubmit)="onSubmit()">
+              <mat-form-field class="mt-2 w-100">
+                <mat-label>Full Name</mat-label>
+                <input matInput placeholder="Full Name" type="text" name="fullName" #fullName="ngModel" [(ngModel)]="newUser.fullName" maxlength="" required>
+                <mat-error *ngIf="fullName.errors?.required && fullName.errors?.touched">Agregalo papito</mat-error>
+                <mat-error *ngIf="fullName.errors?.maxlength">Te pasaste</mat-error>
+              </mat-form-field>
+              <div *ngIf="">
+                <span class="mda-form-msg">Full name is <strong>required.</strong></span>
+              </div>
+              <div class="row">
+                <mat-form-field class="mt-2 col">
+                  <mat-label>Company Name</mat-label>
+                  <input matInput placeholder="Company Name" type="text" name="companyName" #companyName="ngModel" [(ngModel)]="newUser.companyName" maxlength="" required>
+                  <mat-error></mat-error>
+                </mat-form-field>
+                <mat-form-field class="mt-2 col">
+                  <mat-label>Company</mat-label>
+                  <input matInput placeholder="Company" type="number" name="idCompany" #idCompany="ngModel" [(ngModel)]="newUser.idCompany" maxlength="" required>
+                  <mat-error></mat-error>
+                </mat-form-field>
+              </div>
+              <div *ngIf="">
+                <span class="mda-form-msg">Company name is <strong>required.</strong></span>
+              </div>
+              <div *ngIf="">
+                <span class="mda-form-msg">Company is <strong>required.</strong></span>
+              </div>
+              <mat-form-field class="mt-2 w-100">
+                <mat-label>Address</mat-label>
+                <input matInput placeholder="Address" type="text" name="address" #address="ngModel" [(ngModel)]="newUser.address" maxlength="" required>
+                <mat-error></mat-error>
+              </mat-form-field>
+              <div *ngIf="">
+                <span class="mda-form-msg">Address is <strong>required.</strong></span>
+              </div>
+              <mat-form-field class="mt-2 w-100">
+                <mat-label>State</mat-label>
+                <input matInput placeholder="State" type="text" name="state" #state="ngModel" [(ngModel)]="newUser.state" maxlength="" required>
+                <mat-error *ngIf="">Enter your state</mat-error>
+              </mat-form-field>
+              <div class="row">
+                <mat-form-field class="mt-2 col">
+                  <mat-label>City</mat-label>
+                  <input matInput placeholder="City" type="text" name="city" #city="ngModel" [(ngModel)]="newUser.city" maxlength="" required>
+                  <mat-error *ngIf="">Enter your city</mat-error>
+                </mat-form-field>
+                <mat-form-field class="mt-2 col">
+                  <mat-label>ZIP</mat-label>
+                  <input matInput placeholder="ZIP" type="text" name="zip" #zip="ngModel" [(ngModel)]="newUser.zip" maxlength="" required>
+                  <mat-error *ngIf="">Enter your zip</mat-error>
+                </mat-form-field>
+              </div>
+              <mat-form-field class="mt-2 w-100">
+                <mat-label>Telephone</mat-label>
+                <input matInput placeholder="Telephone" type="number" name="telephone" #telephone="ngModel" [(ngModel)]="newUser.telephone" maxlength="" required>
+                <mat-error *ngIf="">Enter your telephone</mat-error>
+              </mat-form-field>
+              <mat-form-field class="mt-2 w-100">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" type="email" name="email" #email="ngModel" [(ngModel)]="newUser.email" maxlength="" required>
+                <mat-error *ngIf="">Enter your email</mat-error>
+              </mat-form-field>
+              <mat-form-field class="mt-2 w-100">
+                <mat-label>Password</mat-label>
+                <input matInput placeholder="Password" type="password" name="password" #password="ngModel" [(ngModel)]="newUser.password" maxlength="" required>
+                <mat-error></mat-error>
+              </mat-form-field>
+              <div *ngIf="" style="margin-top: -20px;">
+                <span class="mda-form-msg">Password is <strong>required.</strong></span>
+              </div>
+              <div *ngIf="" style="margin-top: -20px;">
+                <span class="mda-form-msg">The password does not have a valid <strong>format.</strong>
+                  <ul>
+                    <li>At least 8 characters.</li>
+                    <li>An uppercase letter.</li>
+                    <li>A lowercase letter.</li>
+                    <li>A number digit.</li>
+                  </ul>
+                </span>
+              </div>
+              <div class="mt-2">
+                <button type="submit" mat-raised-button color="primary" class="btn-block" [disabled]="!formRegister.invalid">Register</button>
+                <button mat-raised-button target="_blank" class="btn-block mt-2" [routerLink]="['/login']">Login</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
